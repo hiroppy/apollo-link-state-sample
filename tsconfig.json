@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": false,
+    "jsx": "react",
+    "lib": ["es2017", "dom", "esnext.asynciterable"], // asynciterable is used by graphql
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node", // for module:esnext
+    "allowJs": false,
+    "sourceMap": true,
+    "removeComments": false, // to leave webpack's comment
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": false,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "strict": true
+  },
+  "exclude": ["node_modules", "src/**/*.test.ts", "src/client/**/*.stories.ts"],
+  "include": ["src/**/*"]
+}
