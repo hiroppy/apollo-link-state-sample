@@ -1,0 +1,36 @@
+{
+  "name": "apollo-link-state-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "author": "hiroppy <git@hiroppy.me> (https://hiroppy.me)",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-boost": "^0.1.20",
+    "apollo-link-state": "^0.4.2",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.3",
+    "react": "^16.6.0",
+    "react-apollo": "^2.2.4",
+    "react-dom": "^16.6.0",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.0.3",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "@types/styled-components": "^4.0.3",
+    "@types/webpack-env": "^1.13.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "dotenv-webpack": "^1.5.7",
+    "html-webpack-plugin": "^4.0.0-beta.2",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
