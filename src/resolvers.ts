@@ -3,7 +3,7 @@ import { IResolvers } from 'graphql-tools';
 
 export const resolvers: IResolvers = {
   Mutation: {
-    changeValue: (_, args, { cache }) => {
+    changeValue: (_, variables, { cache }) => {
       const query = gql`
         query {
           counter {
@@ -13,19 +13,13 @@ export const resolvers: IResolvers = {
       `;
 
       const prev = cache.readQuery({ query });
-      const current = args.type === '+' ?
+      const current = variables.type === '+' ?
         ++prev.counter.current :
         --prev.counter.current;
-      const data = {
-        counter: {
-          current,
-          __typename: 'Counter'
-        }
-      };
 
-      cache.writeData({ data });
+      cache.writeData({ query, data: { current } });
 
       return current;
     }
   }
-};
+}
