@@ -1,7 +1,12 @@
-import { ApolloClient, InMemoryCache, ApolloLink, HttpLink } from 'apollo-boost';
-import { withClientState } from 'apollo-link-state';
-import { initialState } from './state';
-import { resolvers } from './resolvers';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloLink,
+  HttpLink
+} from "apollo-boost";
+import { withClientState } from "apollo-link-state";
+import { initialState } from "./state";
+import { resolvers } from "./resolvers";
 
 const cache = new InMemoryCache();
 const stateLink = withClientState({
@@ -10,7 +15,7 @@ const stateLink = withClientState({
   resolvers
 });
 const httpLink = new HttpLink({
-  uri: 'https://api.github.com/graphql',
+  uri: "https://api.github.com/graphql",
   headers: {
     authorization: `Bearer ${process.env.TOKEN}`
   }

@@ -1,13 +1,13 @@
 export const author = {
-  name: '',
-  avatarUrl: '',
-  bio: '',
-  __typename: 'User'
+  name: "",
+  avatarUrl: "",
+  bio: "",
+  __typename: "User"
 };
 
 export const counter = {
   current: 0,
-  __typename: 'Counter'
+  __typename: "Counter"
 };
 
 export const initialState = {

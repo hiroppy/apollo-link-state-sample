@@ -1,9 +1,9 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import { Query } from 'react-apollo';
-import { gql } from 'apollo-boost';
-import { Buttons } from './buttons';
-import { author as Author, counter as Counter } from '../state';
+import * as React from "react";
+import styled from "styled-components";
+import { Query } from "react-apollo";
+import { gql } from "apollo-boost";
+import { Buttons } from "./buttons";
+import { author as Author, counter as Counter } from "../state";
 
 const GET_AUTHOR = gql`
   query {
@@ -29,15 +29,15 @@ const Icon = styled.img`
   width: 120px;
 `;
 
-class GetAuthorQuery extends Query<{ user: typeof  Author }> {}
-class GetCurrentCounterQuery extends Query<{ counter: typeof Counter }>{}
+class GetAuthorQuery extends Query<{ user: typeof Author }> {}
+class GetCurrentCounterQuery extends Query<{ counter: typeof Counter }> {}
 
 export const Top: React.FC = () => (
   <>
-    { console.log('Top: rendering') }
+    {console.log("Top: rendering")}
     <GetAuthorQuery query={GET_AUTHOR}>
       {({ loading, error, data }) => {
-        if (loading) return 'Loading...';
+        if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
         if (!data) return `Error! data is undefined`;
 
@@ -55,7 +55,7 @@ export const Top: React.FC = () => (
     </GetAuthorQuery>
     <GetCurrentCounterQuery query={GET_CURRENT_COUNTER}>
       {({ loading, error, data }) => {
-        if (loading) return 'Loading...';
+        if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
         if (!data) return `Error! data is undefined`;
 

@@ -1,5 +1,5 @@
-import { gql } from 'apollo-boost';
-import { IResolvers } from 'graphql-tools';
+import { gql } from "apollo-boost";
+import { IResolvers } from "graphql-tools";
 
 export const resolvers: IResolvers = {
   Mutation: {
@@ -13,13 +13,14 @@ export const resolvers: IResolvers = {
       `;
 
       const prev = cache.readQuery({ query });
-      const current = variables.type === '+' ?
-        ++prev.counter.current :
-        --prev.counter.current;
+      const current =
+        variables.type === "+"
+          ? ++prev.counter.current
+          : --prev.counter.current;
 
       cache.writeData({ query, data: { current } });
 
       return current;
     }
   }
-}
+};
