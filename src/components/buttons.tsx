@@ -3,13 +3,13 @@ import { Mutation } from 'react-apollo';
 import { gql } from 'apollo-boost';
 
 const INCREASE_CURRENT_COUNTER = gql`
-  mutation increase($type: string! = "+") {
+  mutation increase($type: string!) {
    changeValue(type: $type) @client
   }
 `;
 
 const DECREASE_CURRENT_COUNTER = gql`
-  mutation decrease($type: String! = "-") {
+  mutation decrease($type: String!) {
     changeValue(type: $type) @client
   }
 `;
@@ -19,7 +19,7 @@ class DecreaseCurrentCounterMutation extends Mutation<{ changeValue: number }>{}
 
 export const Buttons: React.FC = () => (
   <>
-    <IncreaseCurrentCounterMutation mutation={INCREASE_CURRENT_COUNTER}>
+    <IncreaseCurrentCounterMutation mutation={INCREASE_CURRENT_COUNTER} variables={{ type: '+' }}>
       {(increase, { loading, error, data }) => {
         if (loading) return 'Loading...';
         if (error) return `Error! ${error.message}`;
@@ -27,7 +27,7 @@ export const Buttons: React.FC = () => (
         return <button onClick={() => increase()}>increase</button>
       }}
     </IncreaseCurrentCounterMutation>
-    <DecreaseCurrentCounterMutation mutation={DECREASE_CURRENT_COUNTER}>
+    <DecreaseCurrentCounterMutation mutation={DECREASE_CURRENT_COUNTER} variables={{ type: '-' }}>
       {(decrease, { loading, error, data }) => {
         if (loading) return 'Loading...';
         if (error) return `Error! ${error.message}`;
